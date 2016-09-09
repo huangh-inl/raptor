@@ -8,7 +8,7 @@
 #include "heatconductiontimederivative.h"
 #include "heatconvection.h"
 #include "Reacted.h"
-#include "Products.h"
+#include "ThermiteMaterial.h"
 
 template<>
 InputParameters validParams<RaptorApp>()
@@ -57,7 +57,7 @@ registerKernel(heatconduction);
 registerKernel(heatconductiontimederivative);
 registerKernel(heatconvection);
 registerAuxKernel(Reacted);
-registerMaterial(Products);
+registerMaterial(ThermiteMaterial);
 }
 
 // External entry point for dynamic syntax association
