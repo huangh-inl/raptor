@@ -43,7 +43,7 @@
 [Functions]
   [./Combust]
     type = ParsedFunction
-    value = 5322.746*alpha
+    value = 532200.746*alpha
     vars = alpha
     vals =  4360
   [../]
@@ -123,7 +123,7 @@
   active = 'reactants'
   [./reactants]
     type = ThermiteMaterial
-    initial_thermal_conductivity = 10.0e-3  # kW/m*K
+    initial_thermal_conductivity = 7.0  # kW/m*K
     initial_specific_heat = 0.680  # kJ/kg-K
     initial_density = 4360  # kg/m^3
 
@@ -131,13 +131,13 @@
     reaction_system =   'Al Fe2O3 Al2O3 Fe'
     sto_coeff =         '2   1      1   2'
     molecular_weights = '26.98e-3 159.69e-3  101.96e-3 55.85e-3'
-    melting_temp =      '933.45   1838.15     2345.14  1811.15'
+    melting_temp =      '933.45e3   1838.15e3     2345.14  1811.15'
     vaporization_temp = '2743.15  3500.0      3250.15  3135.15'
     latent_s_to_l     = '321.00   100.0        100.0     247.1'
     latent_l_to_g     = '10500.0  12000        12000    6213.07'
 
     ignition_temp     = 1200.0
-    rate_constant = 0.001
+    rate_constant = 1.0
     
 
   [../]

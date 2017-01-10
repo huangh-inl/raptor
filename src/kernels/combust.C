@@ -19,6 +19,8 @@ combust::combust(const InputParameters & parameters) :
 //     _dcoupled_val_dt(coupledDot("coupled")),
     _r_ex(getMaterialProperty<Real>("reaction_extent")),
     _r_ex_old(getMaterialPropertyOld<Real>("reaction_extent")),
+    _heat_sink_melting(getMaterialProperty<Real>("melting_heatsink")),
+    _heat_sink_boiling(getMaterialProperty<Real>("boiling_heatsink")),
     _func(getFunction("function"))
 {}
 
@@ -40,6 +42,17 @@ combust::computeQpResidual()
 
   // f() is the total reaction heat KJ/m^3 = ro/ave_molecular_weight * dH, where dH is reaction heat in KJ/mole
   Real dval_dt = (_r_ex[_qp] - _r_ex_old[_qp])/_dt;
-  return -_test[_i][_qp] * f() * dval_dt;
+  Real phase_heat = _heat_sink_melting[_qp] + _heat_sink_boiling[_qp];
+  Real tot_heat = f() * dval_dt - phase_heat;
+  Real tot_r_heat = f() * dval_dt;
+  
+
+  if (tot_heat < 0)
+    tot_heat = 0;
+
+  // if (tot_r_heat > 0)
+  //   std::cout << tot_r_heat << "  " << phase_heat << "  "  << tot_heat << std::endl;
+  
+  return -_test[_i][_qp] * tot_heat;
   
 }

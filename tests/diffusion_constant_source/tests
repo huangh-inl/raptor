@@ -1,0 +1,7 @@
+[Tests]
+  [./test]
+    type = 'Exodiff'
+    input = 'newmats-h05.i'
+    exodiff = 'heat05.e'
+  [../]
+[]

@@ -49,6 +49,9 @@ protected:
 
   const MaterialProperty<Real> & _r_ex;
   const MaterialProperty<Real> & _r_ex_old;
+  const MaterialProperty<Real> & _heat_sink_melting;
+  const MaterialProperty<Real> & _heat_sink_boiling;
+  
 //   const MaterialProperty<Real> & _thermal_conductivity;
 //   const MaterialProperty<Real> & _specific_heat;
 //   const MaterialProperty<Real> & _density;
