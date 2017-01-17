@@ -40,10 +40,10 @@
   #   order = CONSTANT
   #   family = Monomial
   # [../]
-#  [./Al_phase]
-#    order = CONSTANT
-#    family = Monomial
-#  [../]
+  [./Al_phase]
+    order = CONSTANT
+    family = Monomial
+  [../]
   [./Fe2O3_phase]
     order = CONSTANT
     family = Monomial
@@ -72,14 +72,14 @@
     order = CONSTANT
     family = Monomial
   [../]
-#  [./Al_solid]
-#    order = CONSTANT
-#    family = Monomial
-#  [../]
-#  [./Al_liquid]
-#    order = CONSTANT
-#    family = Monomial
-#  [../]
+  [./Al_solid]
+    order = CONSTANT
+    family = Monomial
+  [../]
+  [./Al_liquid]
+    order = CONSTANT
+    family = Monomial
+  [../]
   [./Al_gas]
     order = CONSTANT
     family = Monomial
@@ -169,12 +169,12 @@
   #   property = specific_heat
   #   execute_on = 'initial timestep_end'
   # [../]
-#  [./react1]
-#    type = MaterialRealAux
-#    variable = Al_phase
-#    property = Al_phase
-#    execute_on = 'initial timestep_end'
-#  [../]
+  [./react1]
+    type = MaterialRealAux
+    variable = Al_phase
+    property = Al_phase
+    execute_on = 'initial timestep_end'
+  [../]
   [./react2]
     type = MaterialRealAux
     variable = Fe2O3_phase
@@ -217,18 +217,18 @@
     property = Fe_state
     execute_on = 'initial timestep_end'
   [../]
-#  [./Al1]
-#    type = MaterialRealAux
-#    variable = Al_solid
-#    property = Al_solid
-#    execute_on = 'initial timestep_end'
-#  [../]
-#  [./Al2]
-#    type = MaterialRealAux
-#    variable = Al_liquid
-#    property = Al_liquid
-#    execute_on = 'initial timestep_end'
-#  [../]
+  [./Al1]
+    type = MaterialRealAux
+    variable = Al_solid
+    property = Al_solid
+    execute_on = 'initial timestep_end'
+  [../]
+  [./Al2]
+    type = MaterialRealAux
+    variable = Al_liquid
+    property = Al_liquid
+    execute_on = 'initial timestep_end'
+  [../]
   [./Al3]
     type = MaterialRealAux
     variable = Al_gas
